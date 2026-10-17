@@ -1,2 +1,3 @@
 function add(a, b) { return a + b; }
-module.exports = { add };
+function health() { return { status: 'ok' }; }
+module.exports = { add, health };

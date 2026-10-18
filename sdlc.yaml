@@ -38,12 +38,8 @@ stages:
       min_approvals: 1
   deployment:
     target: production
-    workflow_dispatch:
-      workflow: .github/workflows/deploy-prod.yml
-      ref: main
-      inputs:
-        release_version: "{{release_version}}"
-        candidate_sha: "{{candidate_sha}}"
+    deploy_workflow: .github/workflows/release.yml
+    deploy_on_tag: true
     required_checks:
       - Deploy to Production
     promotion: manual
